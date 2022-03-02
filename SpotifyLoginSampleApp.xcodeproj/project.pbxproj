@@ -13,6 +13,7 @@
 		0461E68E27CF9B4700B0175C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0461E68D27CF9B4700B0175C /* Assets.xcassets */; };
 		0461E69127CF9B4700B0175C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0461E68F27CF9B4700B0175C /* LaunchScreen.storyboard */; };
 		0461E69927CF9BA100B0175C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461E69827CF9BA100B0175C /* LoginViewController.swift */; };
+		0461E69B27CFA1EA00B0175C /* EmterEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461E69A27CFA1EA00B0175C /* EmterEmailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0461E69027CF9B4700B0175C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0461E69227CF9B4700B0175C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0461E69827CF9BA100B0175C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0461E69A27CFA1EA00B0175C /* EmterEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmterEmailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				0461E68427CF9B4600B0175C /* AppDelegate.swift */,
 				0461E68627CF9B4600B0175C /* SceneDelegate.swift */,
 				0461E69827CF9BA100B0175C /* LoginViewController.swift */,
+				0461E69A27CFA1EA00B0175C /* EmterEmailViewController.swift */,
 				0461E68A27CF9B4600B0175C /* Main.storyboard */,
 				0461E68D27CF9B4700B0175C /* Assets.xcassets */,
 				0461E68F27CF9B4700B0175C /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0461E69927CF9BA100B0175C /* LoginViewController.swift in Sources */,
+				0461E69B27CFA1EA00B0175C /* EmterEmailViewController.swift in Sources */,
 				0461E68527CF9B4600B0175C /* AppDelegate.swift in Sources */,
 				0461E68727CF9B4600B0175C /* SceneDelegate.swift in Sources */,
 			);

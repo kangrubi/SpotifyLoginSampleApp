@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,6 +48,9 @@
                                         <state key="normal" title="이메일/비밀번호로 계속하기">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="pyS-9I-5LN" kind="show" id="MD1-SD-Kuz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtc-qB-xSf">
                                         <rect key="frame" x="0.0" y="75" width="354" height="60"/>
@@ -59,6 +63,9 @@
                                         <state key="normal" title="구글로 계속하기" image="logo_google">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="googleLoginButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ruw-7Z-vJQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkB-DY-QPY">
                                         <rect key="frame" x="0.0" y="150" width="354" height="60"/>
@@ -71,6 +78,9 @@
                                         <state key="normal" title="Apple로 계속하기" image="logo_apple">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="appleLoginButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EPv-zF-PLG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -95,10 +105,102 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="leo-OT-weP"/>
+                    <connections>
+                        <outlet property="appleLoginButton" destination="kkB-DY-QPY" id="xqO-kQ-6Ma"/>
+                        <outlet property="emailLoginButton" destination="qHb-1l-Kgi" id="37f-Td-SYf"/>
+                        <outlet property="googleLoginButton" destination="mtc-qB-xSf" id="UfY-pH-h24"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="767" y="80"/>
+        </scene>
+        <!--이메일/비밀번호 입력하기-->
+        <scene sceneID="OTS-QT-X4Z">
+            <objects>
+                <viewController id="pyS-9I-5LN" customClass="EmterEmailViewController" customModule="SpotifyLoginSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5U4-np-eFb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tVD-5z-lO1">
+                                <rect key="frame" x="30" y="158" width="354" height="228"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 주소가 무엇인가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQg-Tz-N0a">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mFV-jZ-RaR">
+                                        <rect key="frame" x="0.0" y="44" width="354" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Hdk-OL-PH0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJV-uZ-Kpj">
+                                        <rect key="frame" x="0.0" y="114" width="354" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yDR-wE-ENs">
+                                        <rect key="frame" x="0.0" y="158" width="354" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="OL4-lk-wfS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmR-CS-fw1">
+                                        <rect key="frame" x="0.0" y="228" width="354" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81q-hc-OkY">
+                                <rect key="frame" x="157" y="446" width="100" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="PgC-54-bAj"/>
+                                    <constraint firstAttribute="width" constant="100" id="kai-ZS-Mvh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTap:" destination="pyS-9I-5LN" eventType="touchUpInside" id="VLg-TR-9av"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8LQ-II-4E9"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tVD-5z-lO1" firstAttribute="leading" secondItem="8LQ-II-4E9" secondAttribute="leading" constant="30" id="3Z1-cx-W3j"/>
+                            <constraint firstItem="81q-hc-OkY" firstAttribute="top" secondItem="tVD-5z-lO1" secondAttribute="bottom" constant="60" id="Jtu-cO-2HF"/>
+                            <constraint firstItem="81q-hc-OkY" firstAttribute="centerX" secondItem="8LQ-II-4E9" secondAttribute="centerX" id="OBJ-XB-gg0"/>
+                            <constraint firstItem="tVD-5z-lO1" firstAttribute="top" secondItem="8LQ-II-4E9" secondAttribute="top" constant="70" id="Yo3-Fo-jpO"/>
+                            <constraint firstItem="tVD-5z-lO1" firstAttribute="centerX" secondItem="8LQ-II-4E9" secondAttribute="centerX" id="c0J-pi-8Sh"/>
+                            <constraint firstItem="8LQ-II-4E9" firstAttribute="trailing" secondItem="tVD-5z-lO1" secondAttribute="trailing" constant="30" id="wVI-pM-oIQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="이메일/비밀번호 입력하기" id="hW6-av-puA"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="mFV-jZ-RaR" id="te1-OK-Qvp"/>
+                        <outlet property="errorMessageLabel" destination="tmR-CS-fw1" id="JH8-5z-AK9"/>
+                        <outlet property="nextButton" destination="81q-hc-OkY" id="HuQ-Kk-VYT"/>
+                        <outlet property="passwordTextField" destination="yDR-wE-ENs" id="c2G-qp-mRt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0MV-DZ-nac" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480" y="80"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5UP-lN-PKg">
@@ -123,5 +225,8 @@
         <image name="logo_apple" width="33.333332061767578" height="33.333332061767578"/>
         <image name="logo_google" width="33.333332061767578" height="33.333332061767578"/>
         <image name="music.house.fill" catalog="system" width="128" height="106"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
