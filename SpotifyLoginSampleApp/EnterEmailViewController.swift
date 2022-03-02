@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EmterEmailViewController: UIViewController {
+class EnterEmailViewController: UIViewController {
   
   @IBOutlet var emailTextField: UITextField!
   @IBOutlet var passwordTextField: UITextField!
@@ -20,6 +20,12 @@ class EmterEmailViewController: UIViewController {
       
       nextButton.layer.cornerRadius = 30
       nextButton.isEnabled = false
+      
+      emailTextField.delegate = self
+      passwordTextField.delegate = self
+      
+      // 새로 화면을 켰을 때 처음 커서가 가도록
+      emailTextField.becomeFirstResponder()
     }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -35,3 +41,19 @@ class EmterEmailViewController: UIViewController {
   }
   
 }
+
+extension EnterEmailViewController:UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    view.endEditing(true)
+    
+    return false
+  }
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    let isEmailEmpty = emailTextField.text == ""
+    let isPasswordEmpty = passwordTextField.text == ""
+    
+    nextButton.isEnabled = !isEmailEmpty && !isPasswordEmpty
+  }
+}
+
